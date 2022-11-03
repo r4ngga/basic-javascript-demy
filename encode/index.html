@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encode</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    {
+    const url = 'http:://www.example.com/?name=Wisnu my';
+    console.info(url);
+
+
+    const encode = encodeURI(url);
+    console.info(encode);
+
+    const decode = decodeURI(encode);
+    console.info(decode);
+    }
+
+    {
+        const valuenya = "Rangga&Wisnu=12";
+        const urlnya = 'http://www.example.com/?name=';
+
+        const encoded = encodeURIComponent(valuenya);
+        console.info(urlnya + encoded);
+
+        const decoded = decodeURIComponent(encoded);
+        console.info(urlnya + decoded);
+    }
+
+</script>
+</html>

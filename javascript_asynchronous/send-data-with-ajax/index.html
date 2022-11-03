@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Data With Ajax & Query Param</title>
+</head>
+<body>
+    <form >
+        <label for="username">
+            Username : <input type="text" name="username" id="username">
+        </label>       
+        <br>
+        <label for="password">
+            Password : <input type="password" name="password" id="password">
+        </label>
+        <br>
+        <input type="button" value="Login" id="login">
+    </form>
+    <br>
+    <form >
+        <label for="search">
+            Search : <input type="text" name="search" id="search">
+        </label>       
+        
+        <br>
+        <input type="button" value="Search" id="find">
+    </form>
+
+    <h4 id="response"></h4>
+    <script>
+
+        function doSearch(){
+            const ajax = new XMLHttpRequest();
+
+            const param = new URLSearchParams();
+
+            param.append("search", document.getElementById("search").value);
+
+            ajax.open("GET", `https://hookb.in/Lgddd6723xH1lrp1aQpg?${param.toString()}`);
+
+            ajax.onload = function() {
+                console.info(ajax.responseText);
+                const response = document.getElementById("response");
+                response.innerText = ajax.responseText;
+            }
+
+            ajax.send(param);
+        }
+        document.getElementById("find").onclick = doSearch;
+
+
+       /* function doLogin(){
+            const ajax = new XMLHttpRequest();
+            ajax.open("POST", "https://hookb.in/Lgddd6723xH1lrp1aQpg");
+
+            ajax.onload = function () {
+                console.info(ajax.responseText);
+                const response = document.getElementById("response");
+                response.innerText = ajax.responseText;
+            }
+
+            ajax.setRequestHeader('Content-Type', 'application/json');
+
+            ajax.send(JSON.stringify({
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value,
+            }));
+        } */
+
+        //mengirimkan data menggunakan form data dengan ajax
+        function doLogin(){
+            const ajax = new XMLHttpRequest();
+            ajax.open("POST", "https://hookb.in/Lgddd6723xH1lrp1aQpg");
+            
+            ajax.onload = function () {
+                console.info(ajax.responseText);
+            }
+            ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            const form =  new URLSearchParams();
+
+            form.append("username", document.getElementById("username").value);
+            form.append("password", document.getElementById("password").value);
+            
+            ajax.send(form);
+        } 
+
+        document.getElementById("login").onclick = doLogin;
+    </script>
+</body>
+</html>

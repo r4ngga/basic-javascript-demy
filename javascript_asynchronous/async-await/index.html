@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async - Await</title>
+</head>
+<body>
+    
+    <script>
+        //return Promise <string> tanpa async await
+            function getNamePromise(){
+                return new Promise( function (resolve, reject){
+                    resolve("Success promise");
+                });
+            }
+
+        getNamePromise().then((name) => console.info(name));
+
+        // return Promise <string> dengan async await
+            async function getNameAsync(){
+                return "Success async";
+            }
+
+        getNameAsync().then((name) => console.info(name));
+
+
+        //Promise <JSON Product>
+        function getProduct() {
+           /* return fetch("api/product.json", {
+                method: "GET"
+            }),then((response) => response.json());*/
+
+            const request = new Request("api/product.json", {
+                method: "GET"
+            });
+
+            const response = fetch(request);
+            return response.then((response) => response.json());
+        }
+
+       // getProduct().then((product) => console.info(product));
+
+       //Promise <String ProductName>
+        async function getProductNameAsync(){
+            try{
+                const product = await getProduct();
+                return product.price; /// return product price (bisa diubah sesuai dengan attribut pada object tersebut)
+            }catch(e){
+                return "faill";
+            }
+        }
+
+        getProductNameAsync().then((product) => console.info(product));
+
+
+    </script>
+</body>
+</html>

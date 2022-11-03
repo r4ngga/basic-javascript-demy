@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Object</title>
+</head>
+<body>
+    
+    <script type="module">
+        //import {firstName, middleName, lastName, hello, Person} from './module.js'; //terlalu banyak
+
+        import * as Manusia from './module.js';
+
+        console.info(Manusia.firstName);
+        console.info(Manusia.middleName);
+        console.info(Manusia.lastName);
+
+        Manusia.hello();
+
+        const person = new Manusia.Person();
+
+        console.info(person.name);
+    </script>
+</body>
+</html>

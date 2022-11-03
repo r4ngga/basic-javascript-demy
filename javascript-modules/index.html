@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Javascript Modules</title>
+    <!-- <script src="library.js"></script> tanpa module -->
+    <script type="module" src="say.js"></script> <!-- dengan module -->
+    <script type="module" src="variable.js"></script> <!-- dengan module -->
+    <script type="module" src="class.js"></script> <!-- dengan module -->
+    <script type="module" src="multiple.js"></script> <!-- dengan module -->
+</head>
+<body>
+    <h1>cek</h1>
+    <h4>silahkan diinspect element</h4>
+</body>
+<script type="module">
+    import {sayHello, sayGoodBye} from "./say.js";
+    import {name} from "./variable.js";
+    import {Person} from "./class.js";
+    import {Company, sum, company} from "./multiple.js";
+    sayHello("Wisnu");
+    sayGoodBye("Aji");
+
+    console.info(name);
+
+    const person = new Person("Adjie");
+    person.sayHai("Winsu");
+
+    console.info(company);
+    console.info(sum(1, 5));
+</script>
+</html>

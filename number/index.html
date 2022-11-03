@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const input = "12345";
+    const number = Number(input);
+
+    console.info(number); 
+    console.info(typeof number);
+    console.info(typeof input);
+
+    console.info(Number.MIN_VALUE);
+    console.info(Number.MAX_VALUE);
+
+    const data = Number('876');
+    console.info(Number.isInteger(data));
+    console.info(Number.isNaN(data));
+
+    const nilai = Number(5678);
+    console.info(nilai.toString(2));
+    console.info(nilai.toLocaleString("id-ID"));
+</script>
+</html>

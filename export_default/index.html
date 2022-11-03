@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default Function - Export Default</title>
+</head>
+<body>
+    
+</body>
+<script type="module">
+    import authorName, {content, title} from './default_name.js'; //export default and name
+   // import {default as authorName, content, title} from './default_name.js'; //export default and name
+
+    //import {default as Person} from './default_class.js'; ///export class
+    //import sayHelloDefault from "./say_hello.js"; ///export default
+   // import {default as namedafault} from "./default_variable.js"; /// export default name
+
+   // sayHelloDefault("Testing");  ///export default
+   // console.info(namedafault); /// export default name
+
+   //const person = new Person("Rangga"); ///export class
+  // person.sayHi(); ///export class
+
+  console.info(authorName); //export default and name
+  console.info(content); //export default and name
+  console.info(title); // export default and name
+</script>
+</html>

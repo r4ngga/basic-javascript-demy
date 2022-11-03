@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker - Thread</title>
+</head>
+<body>
+
+    <button id="buttonTask">Click Me</button>
+
+    <script>
+        function showLog(total){
+            for(let i = 0; i < total; i++){
+                console.log(i);
+            }
+        }
+
+        const worker = new Worker("script/worker.js");
+        //worker.onmessage = callback
+
+        worker.addEventListener("message", function (message){
+            console.info(message.data);
+        });
+        
+        document.getElementById("buttonTask").onclick = function () {
+            worker.postMessage(2000);
+        };
+
+        //tanpa worker
+        /*document.getElementById("buttonTask").onclick = function () {
+            console.info("start log");
+            showLog(50);
+            console.info("end log");
+        } */
+        //tanpa worker
+    </script>
+</body>
+</html>

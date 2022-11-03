@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM</title>
+</head>
+<body>
+    Ini TextNode
+    <!-- <h1 id="title">This DOM</h1> -->
+    <h1 id="title"></h1>
+
+    <h5 id="description"></h5>
+
+    <div>
+        <p id="tulisan">Ini adalah tulisa</p>
+    </div>
+
+    <ul id="menu">
+        <li id="first" class="angka">first</li>
+        <li id="second">second</li>
+        <li id="third">third</li>
+        <li id="fourth">fourth</li>
+        <li id="fifth">fifth</li>
+        <li id="menu1" class="menu">menu1</li>
+        <li id="menu2" class="menu">menu2</li>
+    </ul>
+
+    <div id="content" class="content">
+        <h1 id="title" class="title">This title content</h1>
+        <p id="description" class="description">This content description</p>
+    </div>
+
+    <img id="logo" src="https://www.google.co.id/imgres?imgurl=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2021%2F05%2FGitHub-logo.png&imgrefurl=https%3A%2F%2F1000logos.net%2Fgithub-logo%2F&tbnid=Yqjdpyim6xd9vM&vet=12ahUKEwiM6uncu_r6AhXektgFHcLJDOUQMygCegUIARDjAQ..i&docid=2RrOa4w_PYanyM&w=3840&h=2160&q=github%20logo&hl=en&ved=2ahUKEwiM6uncu_r6AhXektgFHcLJDOUQMygCegUIARDjAQ" alt="githublogo">
+    <!-- <ul id="list">
+
+    </ul> -->
+
+    <!-- <input id="clickMe" type="button" value="Click Me..!"> -->
+
+    <h1 id="teks">Click Yellow Box</h1>
+    <div id="canvas" style="width: 200px; height: 100px;background-color: yellow">
+
+    </div>
+
+    <input type="button" value="blue"/>
+    <input type="button" value="red"/>
+    <input type="button" value="yellow"/>
+
+    <div id="kanvas" style="width: 150px; height: 150px; background: black;">
+
+    </div>
+
+    <p id="kontent">
+        <b>Rangga</b> Wisnu <i>Aji</i>
+    </p>
+
+    <p id="conttentt"></p>
+
+    <a id="linknya" href="#"></a>
+
+    <form action="" name="commentForm">
+        <label for="comment">
+            Comment: <input id="comment" type="text" name="comment"/>
+        </label>
+        <br>
+        <label for="from">
+            From: <input id="from" type="text" name="from"/>
+        </label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="commentList"></div>
+
+    <table id="orderRevenue" border="1">
+        <caption>Order Revenue</caption>
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Income</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>January</td>
+                <td>1000000</td>
+            </tr>
+            <tr>
+                <td>February</td>
+                <td>20000000</td>
+            </tr>
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>30000000</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        //console.info(document);
+        //console.info(document.title);
+         //console.info(document.body);
+         //console.info(document.head);
+         //console.info(document.images);
+         //console.info(document.contentType);
+
+        const tulisan = document.getElementById("tulisan");
+        console.info(tulisan);
+
+        const menu = document.getElementById("menu");
+        console.info(menu);
+        console.info(menu.children);
+        menu.removeChild(document.getElementById("fourth"));
+
+        const second = document.getElementById("second");
+        console.info(second);
+        console.info(second.previousSibling);
+        console.info(second.nextSibling);
+
+        const title = document.getElementById("title");
+        title.textContent = "Bejalar Javascript DOM";
+
+        const description = document.getElementById("description");
+        description.textContent = "Goodluck Belajar Javascript DOM, sukses";
+
+        const content = document.getElementById("content");
+
+        console.info(content.id);
+        console.info(content.className);
+        console.info(content.tagName);
+
+        //description.remove();
+        //title.remove()
+
+        const createtitle = document.createElement("h3");
+        createtitle.textContent = "Membuat Element DOM h3";
+        content.appendChild(createtitle);
+
+        const createdescription = document.createElement("p");
+        createdescription.textContent = "Membuat Elemen DOM paragraf";
+        content.appendChild(createdescription);
+
+        //nodelist
+        const list = document.querySelectorAll("li");
+        console.info(list);
+
+        const list1 = document.getElementById("menu1").childNodes;
+        console.info(list1);
+
+        const list2 = document.getElementById("menu2").childNodes;
+        console.info(list2);
+
+        //const menu1 = document.getElementById("menu1");
+        //const list1 = menu1.childNodes;
+
+        //attr
+        const logo = document.getElementById("logo");
+        //const src = logo.getAttribute("src");
+        const src = logo.getAttributeNode("src");
+        const attributes = logo.attributes; ///namednodemap
+
+        console.info(src.name);
+        console.info(src.value);
+
+        for(let attributny of attributes){ ///namednodemap
+            console.info(`${attributny.name} : ${attributny.value}`); ///namednodemap
+        } ///namednodemap
+
+        //membuat attribut
+       // const buatlogo = document.getElementById("logo");
+       // const buatsrc = document.createAttribute("src");
+       // buatsrc.value = "https://www.google.co.id/imgres?imgurl=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2021%2F05%2FGitHub-logo.png&imgrefurl=https%3A%2F%2F1000logos.net%2Fgithub-logo%2F&tbnid=Yqjdpyim6xd9vM&vet=12ahUKEwiM6uncu_r6AhXektgFHcLJDOUQMygCegUIARDjAQ..i&docid=2RrOa4w_PYanyM&w=3840&h=2160&q=github%20logo&hl=en&ved=2ahUKEwiM6uncu_r6AhXektgFHcLJDOUQMygCegUIARDjAQ";
+       // buatlogo.setAttributeNode(buatsrc); 
+
+       //buatlogo.setAttribute("src", "https://www.google.co.id/imgres?imgurl=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2021%2F05%2FGitHub-logo.png&imgrefurl=https%3A%2F%2F1000logos.net%2Fgithub-logo%2F&tbnid=Yqjdpyim6xd9vM&vet=12ahUKEwiM6uncu_r6AhXektgFHcLJDOUQMygCegUIARDjAQ..i&docid=2RrOa4w_PYanyM&w=3840&h=2160&q=github%20logo&hl=en&ved=2ahUKEwiM6uncu_r6AhXektgFHcLJDOUQMygCegUIARDjAQ");
+
+        //textnode
+      // const initextnode = document.body.firstChild; ///ini untuk getting textnode
+      // console.info(initextnode.wholeText); ///ini untuk getting textnode
+      
+      //untuk membuat textnode
+      //const initextnode = document.createTextNode("Percobaan membuat textnode");
+      //document.body.appendChild(initextnode); 
+       //textnode
+
+       //Event Handler
+       const clickMe = document.getElementById("clickMe");
+       //clickMe.addEventListener("click", function(){
+       //     clickMe.setAttribute("value", "You Already Click Me...!");
+       //});
+       //Event Handler
+
+       //Global Event Handler
+       //clickMe.onclick = function (){
+       // clickMe.setAttribute("value", "You Already Click Me...! Global Event Handler");
+       //}
+       //Global Event Handler
+
+       //Event
+       const canvas = document.getElementById("canvas");
+       const teks = document.getElementById("teks");
+       canvas.onclick = function(event){
+            teks.textContent = `You Click At (${event.x}, ${event.y})`;
+       }
+       //Event
+       
+
+       //Style
+       const kanvas = document.getElementById("kanvas");
+       const buttons = document.querySelectorAll("input");
+
+       for(const button of buttons){
+            button.onclick = function (){
+                kanvas.style.backgroundColor = button.getAttribute("value");
+            }
+       }
+       //Style
+
+
+       //InnerText InnerHTML
+       const konten = document.getElementById("kontent");
+       console.info(konten.textContent);
+       console.info(konten.innerText);
+       console.info(konten.innerHTML);
+       konten.innerHTML = "<h1> Create InnerHTML</h1>";
+       //InnerText InnerHTML
+
+
+       //window
+       const conttentt = document.getElementById("conttentt");
+       const heightt = window.screen.height;
+       const widthh = window.screen.width;
+
+       conttentt.textContent = `Window width (${widthh}) x height (${heightt})`;
+       //window
+
+
+       //Query Selector
+       const elements = document.querySelectorAll("*"); //universal selector
+       // console.info(elements);
+
+       const elemennya = document.querySelectorAll("li"); //type selector
+       ///console.info(elemennya);
+
+       const classelement = document.querySelectorAll(".menu"); //class selector
+       //console.info(classelement);
+
+       const idelement = document.querySelectorAll("#menu1"); //id selector
+       //console.info(idelement);
+
+       const attrelement = document.querySelectorAll("[class]"); //attribute selector
+       //console.info(attrelement);
+
+       const oprattrelement = document.querySelectorAll("div[class^='angka']"); //operator attribute selector
+       console.info(oprattrelement);
+       //Query Selector
+
+       //node type
+       const nodes = document.body.childNodes;
+       nodes.forEach(node =>{
+            console.info(`${node} : ${node.nodeType}`);
+       });
+       //node type
+
+
+       //HTML Element
+       const linknya = document.getElementById("linknya");
+       linknya.href = "https://www.google.com";
+       linknya.target = "_blank";
+       linknya.textContent = "ini link mengarah kesuatu hal";
+       //HTML Element
+
+
+       //HTML Form Element
+       document.querySelector("form[name=commentForm]").onsubmit = function(event){
+            const commentList = document.getElementById("commentList");
+            const comment = document.getElementById("comment").value;
+            const from = document.getElementById("from").value;
+
+            const commentItem = document.createElement("p");
+            commentItem.textContent = `${comment} - ${from}`;
+            commentList.appendChild(commentItem);
+
+            document.forms['commentForm'].reset();
+
+            event.preventDefault();
+       };
+       //HTML Form Element
+
+       //HTML Table Element
+       const orderRevenue = document.getElementById("orderRevenue");
+       console.info(orderRevenue.caption);
+       console.info(orderRevenue.tHead);
+       console.info(orderRevenue.tBodies);
+       console.info(orderRevenue.tFoot);
+       //HTML Table Element
+    </script>
+</body>
+</html>

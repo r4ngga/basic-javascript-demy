@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    
+</body>
+<script> 
+
+    {
+        //array looping
+        const set_array = ["Rangga", "Wisnu", "Aji"];
+
+        set_array.forEach(function(value, index){
+            console.info(`${index} : ${value}`);
+        });
+
+        set_array.forEach((value, index) => console.info(`${index} : ${value}`));
+
+        set_array.forEach(value => console.info(value));
+    }
+
+    {
+        //array queue
+        const antrian = [];
+
+        antrian.push("Rangga1");
+        antrian.push("Wisnu1");
+        antrian.push("Aji1");
+
+        console.info(antrian.shift());
+        console.info(antrian.shift());
+        console.info(antrian.shift());
+        console.info(antrian.shift());
+    }
+
+    {
+        //array stack
+        const tumpukan = [];
+
+        tumpukan.push("Rangga");
+        tumpukan.push("Wisnu");
+        tumpukan.push("Aji");
+
+        console.info(tumpukan.pop());
+        console.info(tumpukan.pop());
+        console.info(tumpukan.pop());
+    }
+
+    {
+        //array search
+        const source = [1,2,3,4,5,6,7,8,9,10];
+
+        console.info(source.find(value => value > 3));
+        console.info(source.findIndex(value=> value >3));
+        console.info(source.includes(7));
+        console.info(source.indexOf(5));
+        console.info(source.lastIndexOf(7));
+    }
+
+    {
+        //array filter
+        const numbers = [1,2,3,4,5,6,7,8,9,10];
+
+        console.info(numbers);
+        console.info(numbers.filter(value => value % 2 === 1));
+        console.info(numbers.filter(value => value % 2 === 0));
+    }
+
+    {
+        //array transform
+        const names = "Rangga Wisnu Aji M".split(" ");
+        console.info(names.map(value => value.toUpperCase()));
+
+        const numbers = [1,2,3,4,5,6,7,8,9,10];
+        console.info(numbers.reduce((result, value) => result + value));
+        console.info(numbers.reduceRight((result, value) => result + value));
+    }
+    
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Inherintace</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+
+    function Employe(firstName){
+        this.firstName = firstName;
+        this.sayHello = function(name){
+            console.info(`Hello ${name}, my name is ${this.firstName}`)
+        }
+    }
+
+    function Manager(firstName, lastName){
+        this.lastName = lastName;
+        Employe.call(this, firstName);
+        this.lastName = lastName;
+    }
+
+    const mngr = new Manager("Rangga", "WM");
+    console.info(mngr);
+</script>
+</html>

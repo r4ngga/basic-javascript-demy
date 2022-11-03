@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Field</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Configuration {
+        static name = "Belajar JS";
+        static version = 1.0;
+        static author = "Rangga Wisnu AM";
+    }
+
+    const configure = new Configuration();
+    console.info(configure);
+    console.info(Configuration.name);
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Constructor Function</title>
+</head>
+<body>
+    
+</body>
+<script type="text/javascript">
+
+    function Person(){
+        this.firstName = "";
+        this.lastName = "";
+        this.sayHello = function(name){
+            console.info(`Hello ${name}, my name is ${this.firstName}`)
+        }
+    }
+
+   /* const rangga = {
+        firstName = "RanggaW"
+    };
+
+    const wisnu = {
+        NamaDepan = "WisnuAM"
+    }; */
+
+  /*  const rangga = new Person();
+    rangga.firstName = "Rangga";
+    rangga.lastName = "Wisnu";
+    const wisnu = new Person();
+    wisnu.firstName = "Wisnu";
+    wisnu.lastName = "AM";
+
+    console.log(rangga);
+    console.log(wisnu); */
+
+    const rangga = new Person();
+    rangga.firstName = "Rangga";
+    rangga.sayHello("Udin");
+
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    
+</body>
+<script>
+    {
+        //object freeze / seal
+        const person = {
+        firstName: "Rangga",
+        lastName: "Wisnu AM",
+         };
+
+    Object.freeze(person);
+    //Object.seal(person);
+    person.firstName = "Change";
+    delete person.firstName;
+    console.info(person);
+    }
+
+    {
+        //object assign
+        const target = { firstName: "Rangga" };
+        const source = { lastName: "Wisnu Aji" };
+
+        Object.assign(target, source);
+        console.info(target);
+        console.info(source);
+    }
+
+    {
+        //Object property name & value 
+        const personate = {
+            firstName: "Rangga",
+            middleName: "Wisnu",
+            lastName: "AjiM",
+        };
+
+        console.info(Object.values(personate));
+        console.info(Object.getOwnPropertyNames(personate));
+    }
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    const newmap = new Map();
+    newmap.set("Name", "Wisnu A");
+    newmap.set("Address", "Indonesia");
+
+    console.info(newmap);
+    console.info(newmap.get("Name"));
+    console.info(newmap.get("Address"));
+
+    for(const element of newmap){
+        console.info(`${element[0]} : ${element[1]}`);
+    }
+
+   /* newmap.forEach((value, key) => console.info(`${key} : ${value}`)); */
+
+</script>
+</html>
